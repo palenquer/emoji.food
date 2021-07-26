@@ -13,5 +13,7 @@ module.exports = {
       fontWeight: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import SignInButton from "./SignInButton";
 import { FaPizzaSlice } from "react-icons/fa";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { FaShoppingCart } from "react-icons/fa";
 import Nav from "./Nav";
 
 interface HeaderProps {
@@ -33,6 +34,14 @@ export function Header({ onClick }: HeaderProps) {
 
           <Nav />
         </div>
+
+        <button type="button" className="flex gap-2 items-center">
+          <FaShoppingCart className="w-8 h-8" />
+
+          <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
+            <h3 className="text-red-500 font-bold">0</h3>
+          </div>
+        </button>
       </div>
     </header>
   );

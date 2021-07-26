@@ -24,7 +24,6 @@
   h3 {
     @apply text-lg;
   }
-
 }
 
 @tailwind components;
