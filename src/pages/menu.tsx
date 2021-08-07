@@ -41,35 +41,39 @@ export default function Menu() {
                   key={item.id}
                   className="h-60 md:h-24 w-full bg-red-500 rounded-md text-white p-4 flex flex-col md:flex-row items-center justify-between"
                 >
-                  <div className="flex flex-col md:flex-row items-center justify-center w-auto mb-4 md:mb-0">
-                    <div className="w-20 h-20 md:h-full flex items-center justify-center">
+                  <div className="flex flex-col md:flex-row items-center justify-center w-full mb-4 md:mb-0">
+                    <div className="md:w-20 h-20 md:h-full flex items-center justify-center md:border-r-2 border-b-2 border-red-300 md:border-b-0 w-full mb-2 md:mb-0">
                       <h1 className="text-5xl">{item.icon}</h1>
                     </div>
 
-                    <div className="md:border-l-2 border-red-400 md:pl-4">
-                      <h1 className="text-lg">{item.name}</h1>
-                      <h3 className="text-red-300 text-sm">
-                        {item.ingredients}
-                      </h3>
+                    <div className="md:pl-4 flex justify-between w-full md:items-center">
+                      <div>
+                        <h1 className="text-lg">{item.name}</h1>
+                        <h3 className="text-red-300 text-sm">
+                          {item.ingredients}
+                        </h3>
+                      </div>
+
+                      <h1 className="md:w-24">${item.price}</h1>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <h1 className="text-3xl w-20">${item.price}</h1>
+                  <div className="w-40 bg-red-400 h-14 rounded-md flex justify-between items-center border-2 border-red-300">
+                    <button
+                      className="h-full w-20 bg-red-500 rounded-l-md text-3xl hover:bg-red-400 border-r-2 border-red-300"
+                      onClick={() => toast.info(item.name + " added to cart")}
+                    >
+                      +
+                    </button>
 
-                    <div className="w-40 bg-red-400 h-14 rounded-md flex justify-between items-center border-2 border-red-300">
-                      <button
-                        className="h-full w-20 bg-red-500 rounded-l-md text-3xl hover:bg-red-400 border-r-2 border-red-300"
-                        onClick={() => toast.info(item.name + " added to cart")}
-                      >
-                        +
-                      </button>
-
-                      <button className="h-full w-20 bg-red-500 rounded-r-md text-3xl hover:bg-red-400"
-                      onClick={() => toast.warning(item.name + " removed from cart")}>
-                        -
-                      </button>
-                    </div>
+                    <button
+                      className="h-full w-20 bg-red-500 rounded-r-md text-3xl hover:bg-red-400"
+                      onClick={() =>
+                        toast.warning(item.name + " removed from cart")
+                      }
+                    >
+                      -
+                    </button>
                   </div>
                 </div>
               );
