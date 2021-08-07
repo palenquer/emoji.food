@@ -36,7 +36,7 @@ export function Header({ onClick }: HeaderProps) {
         </div>
 
         <button type="button" className="flex gap-2 items-center">
-          <FaShoppingCart className="w-8 h-8" />
+          <FaShoppingCart className="w-6 h-6" />
 
           <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
             <h3 className="text-red-500 font-bold">0</h3>
