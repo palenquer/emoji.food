@@ -23,7 +23,7 @@ export function Header({ onClick }: HeaderProps) {
         </Link>
 
         <button
-          className="md:hidden h-20 w-20 flex justify-center items-center absolute right-0"
+          className="md:hidden h-20 w-20 flex justify-center items-center"
           onClick={onClick}
         >
           <HiMenuAlt3 className="w-12 h-12" />
@@ -35,7 +35,7 @@ export function Header({ onClick }: HeaderProps) {
           <Nav />
         </div>
 
-        <button type="button" className="flex gap-2 items-center">
+        <button type="button" className="hidden md:flex gap-2 items-center">
           <FaShoppingCart className="w-6 h-6" />
 
           <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">

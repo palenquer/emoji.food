@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { FaPizzaSlice } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ItemsMenu {
   id: number;
@@ -30,6 +31,7 @@ export default function Menu() {
         <title>Menu | fast.food</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className="mx-auto container px-4 lg:px-40 flex flex-col flex-grow overflow-hidden">
         <div className="bg-white flex flex-col md:flex-row h-full items-center p-4 md:px-16 justify-around">
           <section className="h-full w-full flex flex-col overflow-y-auto scrollbar-hide gap-4">
@@ -44,7 +46,7 @@ export default function Menu() {
                       <h1 className="text-5xl">{item.icon}</h1>
                     </div>
 
-                    <div>
+                    <div className="md:border-l-2 border-red-400 md:pl-4">
                       <h1 className="text-lg">{item.name}</h1>
                       <h3 className="text-red-300 text-sm">
                         {item.ingredients}
@@ -56,11 +58,15 @@ export default function Menu() {
                     <h1 className="text-3xl w-20">${item.price}</h1>
 
                     <div className="w-40 bg-red-400 h-14 rounded-md flex justify-between items-center border-2 border-red-300">
-                      <button className="h-full w-20 bg-red-500 rounded-l-md text-3xl hover:bg-red-400 border-r-2 border-red-300">
+                      <button
+                        className="h-full w-20 bg-red-500 rounded-l-md text-3xl hover:bg-red-400 border-r-2 border-red-300"
+                        onClick={() => toast.info(item.name + " added to cart")}
+                      >
                         +
                       </button>
 
-                      <button className="h-full w-20 bg-red-500 rounded-r-md text-3xl hover:bg-red-400">
+                      <button className="h-full w-20 bg-red-500 rounded-r-md text-3xl hover:bg-red-400"
+                      onClick={() => toast.warning(item.name + " removed from cart")}>
                         -
                       </button>
                     </div>
