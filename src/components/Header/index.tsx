@@ -4,12 +4,15 @@ import { FaPizzaSlice } from "react-icons/fa";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
 import Nav from "./Nav";
+import { useCart } from "../../hooks/useCart";
 
 interface HeaderProps {
   onClick: () => void;
 }
 
 export function Header({ onClick }: HeaderProps) {
+  const { cart } = useCart();
+
   return (
     <header className="h-20 w-screen bg-red-500 text-white z-50">
       <div className="mx-auto container flex items-center justify-between h-20 px-4 lg:px-40 relative">
@@ -39,7 +42,7 @@ export function Header({ onClick }: HeaderProps) {
           <FaShoppingCart className="w-6 h-6" />
 
           <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
-            <h3 className="text-red-500 font-bold">0</h3>
+            <h3 className="text-red-500 font-bold">{cart.length}</h3>
           </div>
         </button>
       </div>

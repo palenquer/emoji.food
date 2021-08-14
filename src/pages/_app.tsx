@@ -3,12 +3,13 @@ import Menu from "../components/Menu";
 import useToggle from "../hooks/useToggle";
 import { toast, ToastContainer } from "react-toastify";
 import "../styles/tailwind-globals.css";
+import { CartProvider } from "../hooks/useCart";
 
 toast.configure();
 function MyApp({ Component, pageProps }) {
   const [toggleIsOn, setToggleIsOn] = useToggle(false);
   return (
-    <>
+    <CartProvider>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
       <ToastContainer />
-    </>
+    </CartProvider>
   );
 }
 
