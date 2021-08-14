@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Product } from "../../types";
 import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "../hooks/useCart";
+import { toast } from "react-toastify";
 
 export default function Menu() {
   const [menu, setMenu] = useState([]);
@@ -55,7 +56,12 @@ export default function Menu() {
                   <div className="w-40 bg-red-400 h-14 rounded-md flex justify-between items-center border-2 border-red-300">
                     <button
                       className="h-full w-20 bg-red-500 rounded-l-md text-3xl hover:bg-red-600 "
-                      onClick={() => addProduct(item)}
+                      onClick={() =>
+                        cart.filter((product) => product.id === item.id)
+                          .length < 99
+                          ? addProduct(item)
+                          : toast.error("Error adding product")
+                      }
                     >
                       +
                     </button>

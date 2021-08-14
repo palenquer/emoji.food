@@ -22,12 +22,12 @@ function MyApp({ Component, pageProps }) {
       <ToastContainer
         toastClassName={({ type }) =>
           contextClass[type || "default"] +
-          " relative flex p-2 min-h-20 rounded-md justify-between overflow-hidden cursor-pointer mb-4"
+          " relative flex p-2 min-h-20 rounded-md justify-between overflow-hidden cursor-pointer mb-4 md:w-full w-80"
         }
-        position="top-right"
+        position="bottom-right"
         autoClose={1000}
         hideProgressBar
-        newestOnTop={false}
+        newestOnTop
         closeOnClick
         transition={Flip}
         rtl={false}
