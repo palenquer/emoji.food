@@ -1,9 +1,18 @@
 import { Header } from "../components/Header";
 import Menu from "../components/Menu";
 import useToggle from "../hooks/useToggle";
-import { toast, ToastContainer } from "react-toastify";
+import { Flip, toast, ToastContainer } from "react-toastify";
 import "../styles/tailwind-globals.css";
 import { CartProvider } from "../hooks/useCart";
+
+const contextClass = {
+  success: "bg-green-400",
+  error: "bg-red-400",
+  info: "bg-blue-400",
+  warning: "bg-orange-400",
+  default: "bg-indigo-600",
+  dark: "bg-white-600 font-gray-300",
+};
 
 toast.configure();
 function MyApp({ Component, pageProps }) {
@@ -11,11 +20,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <CartProvider>
       <ToastContainer
+        toastClassName={({ type }) =>
+          contextClass[type || "default"] +
+          " relative flex p-2 min-h-20 rounded-md justify-between overflow-hidden cursor-pointer mb-4"
+        }
         position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
+        autoClose={1000}
+        hideProgressBar
         newestOnTop={false}
         closeOnClick
+        transition={Flip}
         rtl={false}
         pauseOnFocusLoss
         draggable
@@ -26,7 +40,6 @@ function MyApp({ Component, pageProps }) {
         {toggleIsOn && <Menu />}
         <Component {...pageProps} />
       </div>
-      <ToastContainer />
     </CartProvider>
   );
 }

@@ -61,7 +61,7 @@ export default function Menu() {
                     </button>
 
                     <span className="w-10 bg-red-500 h-full flex items-center justify-center border-r-2 border-l-2 border-red-300">
-                      0
+                      {cart.filter((product) => product.id === item.id).length}
                     </span>
 
                     <button
