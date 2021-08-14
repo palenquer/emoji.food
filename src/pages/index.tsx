@@ -22,7 +22,7 @@ export default function Home() {
 
             <Link href="/menu">
               <a>
-                <button className="bg-red-500 h-12 w-64 rounded-full text-white font-bold hover:bg-red-700 transition">Click here to see our menu</button>
+                <button className="bg-red-500 h-12 w-64 rounded-full text-white font-bold hover:bg-red-600 transition">Click here to see our menu</button>
               </a>
             </Link>
           </section>

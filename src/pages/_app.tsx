@@ -4,6 +4,7 @@ import useToggle from "../hooks/useToggle";
 import { Flip, toast, ToastContainer } from "react-toastify";
 import "../styles/tailwind-globals.css";
 import { CartProvider } from "../hooks/useCart";
+import Nav from "../components/Header/Nav";
 
 const contextClass = {
   success: "bg-green-400",
@@ -17,6 +18,7 @@ const contextClass = {
 toast.configure();
 function MyApp({ Component, pageProps }) {
   const [toggleIsOn, setToggleIsOn] = useToggle(false);
+
   return (
     <CartProvider>
       <ToastContainer
@@ -36,8 +38,14 @@ function MyApp({ Component, pageProps }) {
         pauseOnHover
       />
       <div className="flex flex-col h-screen">
-        <Header onClick={setToggleIsOn} />
-        {toggleIsOn && <Menu />}
+        <Header onClick={setToggleIsOn}>
+          <Nav onClick={setToggleIsOn} />
+        </Header>
+        {toggleIsOn && (
+          <Menu onClick={setToggleIsOn}>
+            <Nav onClick={setToggleIsOn} />
+          </Menu>
+        )}
         <Component {...pageProps} />
       </div>
     </CartProvider>

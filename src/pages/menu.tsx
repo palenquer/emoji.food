@@ -5,6 +5,7 @@ import { Product } from "../../types";
 import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "../hooks/useCart";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 export default function Menu() {
   const [menu, setMenu] = useState([]);
@@ -80,6 +81,14 @@ export default function Menu() {
                 </div>
               );
             })}
+
+            <Link href="/cart">
+              <a className="ml-auto">
+                <button className="bg-red-500 h-16 w-36 text-white rounded-lg text-lg font-semibold hover:bg-red-600 transition">
+                  Finish
+                </button>
+              </a>
+            </Link>
           </section>
         </div>
       </main>
