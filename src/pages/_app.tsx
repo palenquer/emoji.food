@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import useToggle from "../hooks/useToggle";
 import { Flip, toast, ToastContainer } from "react-toastify";
 import "../styles/tailwind-globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "../hooks/useCart";
 import Nav from "../components/Header/Nav";
 
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   const [toggleIsOn, setToggleIsOn] = useToggle(false);
 
   return (
-    <CartProvider>
+    <>
       <ToastContainer
         toastClassName={({ type }) =>
           contextClass[type || "default"] +
@@ -37,18 +38,21 @@ function MyApp({ Component, pageProps }) {
         draggable
         pauseOnHover
       />
-      <div className="flex flex-col h-screen">
-        <Header onClick={setToggleIsOn}>
-          <Nav onClick={setToggleIsOn} />
-        </Header>
-        {toggleIsOn && (
-          <Menu onClick={setToggleIsOn}>
+      
+      <CartProvider>
+        <div className="flex flex-col h-screen">
+          <Header onClick={setToggleIsOn}>
             <Nav onClick={setToggleIsOn} />
-          </Menu>
-        )}
-        <Component {...pageProps} />
-      </div>
-    </CartProvider>
+          </Header>
+          {toggleIsOn && (
+            <Menu onClick={setToggleIsOn}>
+              <Nav onClick={setToggleIsOn} />
+            </Menu>
+          )}
+          <Component {...pageProps} />
+        </div>
+      </CartProvider>
+    </>
   );
 }
 
