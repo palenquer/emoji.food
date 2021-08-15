@@ -29,7 +29,7 @@ export default function Menu() {
       </Head>
 
       <main className="mx-auto container px-4 lg:px-40 flex flex-col flex-grow overflow-hidden">
-        <div className="bg-white flex flex-col md:flex-row h-full items-center p-4 md:px-16 justify-around">
+        <div className="bg-white flex flex-col md:flex-row h-full items-center p-4 md:px-16">
           <section className="h-full w-full flex flex-col overflow-y-auto scrollbar-hide gap-4">
             {menu.map((item: Product) => {
               

@@ -12,7 +12,7 @@ export default function Cart() {
 
   return (
     <main className="mx-auto container px-4 lg:px-40 flex flex-col flex-grow overflow-hidden">
-      <div className="bg-white flex flex-col h-full items-center p-4 md:px-16 justify-around">
+      <div className="bg-white flex flex-col h-full items-center p-4 md:px-16">
         <section className="h-auto w-full flex flex-col overflow-y-auto scrollbar-hide gap-4 border-b-2 border-gray-300 pb-2">
           {cart.map((item: Product) => {
             {
