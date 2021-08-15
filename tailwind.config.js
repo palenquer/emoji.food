@@ -11,6 +11,9 @@ module.exports = {
     extend: {
       borderWidth: ['hover', 'focus'],
       fontWeight: ['hover', 'focus'],
+      textColor: ['disabled'],
+      brightness: ['hover', 'focus', 'disabled'],
+      cursor: ['disabled'],
     },
   },
   plugins: [

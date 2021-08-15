@@ -14,7 +14,7 @@ export function Header({ onClick, children }: HeaderProps) {
   const { cart } = useCart();
 
   return (
-    <header className="h-20 w-screen bg-red-500 text-white z-50">
+    <header className="h-20 w-screen bg-red-500 text-white z-50 sticky top-0">
       <div className="mx-auto container flex items-center justify-between h-20 pl-4 lg:px-40">
         <Link href="/">
           <a className="text-3xl h-20 flex justify-center items-center">

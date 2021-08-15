@@ -55,7 +55,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         throw Error();
       }
     } catch {
-      toast.error("Error");
+      toast.error("Error removing product");
     }
   };
 

@@ -14,7 +14,7 @@ export default function Menu({onClick, children}: MenuProps) {
   const { cart } = useCart();
 
   return (
-    <div className="absolute w-screen h-screen bg-red-500 flex flex-col md:flex-row justify-center items-center text-white z-40 overflow-hidden">
+    <div className="absolute w-screen h-screen bg-red-500 flex flex-col md:flex-row justify-center items-center text-white z-40 overflow-hidden md:hidden">
       <Link href="/cart">
         <a className="w-full h-16 border-b-2 border-red-400 mb-8" onClick={onClick}>
           <button
