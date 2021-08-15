@@ -32,7 +32,6 @@ export default function Menu() {
         <div className="bg-white flex flex-col md:flex-row h-full items-center p-4 md:px-16">
           <section className="h-full w-full flex flex-col overflow-y-auto scrollbar-hide gap-4">
             {menu.map((item: Product) => {
-              
               return (
                 <div
                   key={item.id}
@@ -59,21 +58,6 @@ export default function Menu() {
 
                   <div className="w-40  h-14 rounded-md flex justify-between items-center border-2 border-gray-300">
                     <button
-                      className="h-full w-20 rounded-l-md text-3xl filter hover:brightness-90 text-red-500 disabled:text-gray-300 disabled:cursor-default"
-                      onClick={() => addProduct(item)}
-                      disabled={
-                        cart.filter((product) => product.id === item.id)
-                          .length >= 9
-                      }
-                    >
-                      +
-                    </button>
-
-                    <span className="w-10 h-full flex items-center justify-center font-bold">
-                      {cart.filter((product) => product.id === item.id).length}
-                    </span>
-
-                    <button
                       className="h-full w-20 rounded-r-md text-5xl filter hover:brightness-90 text-red-500 disabled:text-gray-300 disabled:cursor-default"
                       disabled={
                         cart.filter((product) => product.id === item.id)
@@ -82,6 +66,21 @@ export default function Menu() {
                       onClick={() => removeProduct(item.id, item)}
                     >
                       -
+                    </button>
+
+                    <span className="w-10 h-full flex items-center justify-center font-bold">
+                      {cart.filter((product) => product.id === item.id).length}
+                    </span>
+
+                    <button
+                      className="h-full w-20 rounded-l-md text-3xl filter hover:brightness-90 text-red-500 disabled:text-gray-300 disabled:cursor-default"
+                      onClick={() => addProduct(item)}
+                      disabled={
+                        cart.filter((product) => product.id === item.id)
+                          .length >= 9
+                      }
+                    >
+                      +
                     </button>
                   </div>
                 </div>
