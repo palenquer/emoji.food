@@ -37,21 +37,21 @@ function MyApp({ Component, pageProps }) {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      >
-        <CartProvider>
-          <div className="flex flex-col h-screen">
-            <Header onClick={setToggleIsOn}>
+      />
+      
+      <CartProvider>
+        <div className="flex flex-col h-screen">
+          <Header onClick={setToggleIsOn}>
+            <Nav onClick={setToggleIsOn} />
+          </Header>
+          {toggleIsOn && (
+            <Menu onClick={setToggleIsOn}>
               <Nav onClick={setToggleIsOn} />
-            </Header>
-            {toggleIsOn && (
-              <Menu onClick={setToggleIsOn}>
-                <Nav onClick={setToggleIsOn} />
-              </Menu>
-            )}
-            <Component {...pageProps} />
-          </div>
-        </CartProvider>
-      </ToastContainer>
+            </Menu>
+          )}
+          <Component {...pageProps} />
+        </div>
+      </CartProvider>
     </>
   );
 }
