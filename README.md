@@ -5,7 +5,7 @@
     <br />
     <a href="https://fast-food-psi.vercel.app">DEMO</a>
   </p>
-  <p align="center">Teste de autênticação com github.</p>
+  <p align="center">E-commerce food app.</p>
 </p>
 
 <h2>Sobre o projeto</h2>
