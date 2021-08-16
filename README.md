@@ -1,6 +1,8 @@
 <p align="center">
   <h1 align="center">fast.food</h1>
   
+  ![Project Image](https://user-images.githubusercontent.com/72106284/129623366-42836303-04f6-46b5-9856-c8b975e8e6c6.png)
+  
   <p align="center">
     <br />
     <a href="https://fast-food-psi.vercel.app">DEMO</a>
