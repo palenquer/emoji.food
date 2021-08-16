@@ -2,8 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../hooks/useCart";
-import Nav from "./Header/Nav";
-import SignInButton from "./Header/SignInButton";
 
 interface MenuProps {
   onClick: () => void;
@@ -29,10 +27,6 @@ export default function Menu({onClick, children}: MenuProps) {
           </button>
         </a>
       </Link>
-
-      <div className="w-full mb-8 flex items-center justify-center">
-        <SignInButton />
-      </div>
 
       {children}
     </div>

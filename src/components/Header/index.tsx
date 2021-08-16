@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SignInButton from "./SignInButton";
 import { FaPizzaSlice } from "react-icons/fa";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -37,23 +36,26 @@ export function Header({ onClick, children }: HeaderProps) {
           )}
         </button>
 
-        <div className="hidden md:flex justify-center items-center gap-2">
-          <SignInButton />
-
+        <div className="hidden md:flex justify-center items-center gap-2 w-full">
           {children}
         </div>
 
-        <Link href="/cart">
-          <a>
-            <button type="button" className="hidden md:flex gap-2 items-center">
-              <FaShoppingCart className="w-6 h-6" />
+        <div className="hidden md:flex items-center justify-center gap-2">
+          <Link href="/cart">
+            <a>
+              <button
+                type="button"
+                className="hidden md:flex gap-2 items-center ml-auto"
+              >
+                <FaShoppingCart className="w-6 h-6" />
 
-              <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
-                <h3 className="text-red-500 font-bold">{cart.length}</h3>
-              </div>
-            </button>
-          </a>
-        </Link>
+                <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
+                  <h3 className="text-red-500 font-bold">{cart.length}</h3>
+                </div>
+              </button>
+            </a>
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -90,7 +90,7 @@ export default function Menu() {
             <Link href="/cart">
               <a className="ml-auto">
                 <button className="bg-red-500 h-16 w-36 text-white rounded-lg text-lg font-semibold filter hover:brightness-90 transition">
-                  Finish
+                  Go to cart
                 </button>
               </a>
             </Link>
