@@ -3,7 +3,7 @@ export const menu = [
     id: 0,
     icon: "🍕",
     name: "Pizza",
-    ingredients: "Cheese, Tomato Paste, Sausage",
+    ingredients: "Cheese, Tomato Paste, Pepperoni",
     price: 29.9,
   },
   {
@@ -25,7 +25,7 @@ export const menu = [
     name: "Soda",
     price: 1.9,
   },
-  {
+  { 
     id: 4,
     icon: "🌭",
     name: "Hotdog",
