@@ -13,8 +13,8 @@ export default function Cart() {
   }, 0);
 
   const filteredCart = cart.reduce((acc, current) => {
-    const x = acc.find((item) => item.id === current.id);
-    if (!x) {
+    const filter = acc.find((item) => item.id === current.id);
+    if (!filter) {
       return acc.concat([current]);
     } else {
       return acc;
