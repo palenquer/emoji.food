@@ -35,7 +35,7 @@ export default function Menu() {
               return (
                 <div
                   key={item.id}
-                  className="h-60 md:h-24 w-full bg-gray-100 rounded-md p-4 flex flex-col md:flex-row items-center justify-between"
+                  className="h-64 md:h-24 w-full bg-gray-100 rounded-md p-4 flex flex-col md:flex-row items-center justify-between"
                 >
                   <div className="flex flex-col md:flex-row items-center justify-center w-full mb-4 md:mb-0">
                     <div className="md:w-20 h-20 md:h-full flex items-center justify-center md:border-r-2 border-b-2 border-gray-300 md:border-b-0 w-full mb-2 md:mb-0">
@@ -90,7 +90,7 @@ export default function Menu() {
             <Link href="/cart">
               <a className="ml-auto">
                 <button className="bg-red-500 h-16 w-36 text-white rounded-lg text-lg font-semibold filter hover:brightness-90 transition">
-                  Go to cart
+                  Go to cart  
                 </button>
               </a>
             </Link>
