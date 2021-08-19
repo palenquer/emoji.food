@@ -12,6 +12,15 @@ export default function Cart() {
     return sum + currentValue.price;
   }, 0);
 
+  const filteredCart = cart.reduce((acc, current) => {
+    const x = acc.find((item) => item.id === current.id);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -27,20 +36,26 @@ export default function Cart() {
             </Link>
 
             <section className="h-auto w-full flex flex-col overflow-y-auto scrollbar-hide gap-4 border-b-2 border-gray-300 pb-2">
-              {cart.map((item: Product) => {
-                {
-                  cart.filter((product) => product.id === item.id).length > 1;
-                }
+              {filteredCart.map((item: Product) => {
                 return (
                   <div
                     key={item.id}
                     className="h-20 w-full bg-gray-100 rounded-md pl-4 py-4 flex flex-row items-center justify-between"
                   >
-                    <div>
-                      <h1>{item.name}</h1>
-                      <h2 className="text-green-400 font-bold ">
-                        {formatPrice(item.price)}
-                      </h2>
+                    <div className="flex gap-4 items-center h-full">
+                      <h1 className="border-r-2 border-gray-300 w-8 h-full flex items-center">
+                        {
+                          cart.filter((product) => product.id === item.id)
+                            .length
+                        }
+                      </h1>
+
+                      <div>
+                        <h1>{item.name}</h1>
+                        <h2 className="text-green-400 font-bold ">
+                          {formatPrice(item.price)}
+                        </h2>
+                      </div>
                     </div>
 
                     <div className="w-20 h-full flex items-center justify-center border-l-2 border-gray-300">
@@ -59,7 +74,10 @@ export default function Cart() {
               </div>
             </section>
 
-            <button className="bg-red-500 h-16 w-36 text-white rounded-lg text-lg font-semibold filter hover:brightness-90 transition ml-auto mt-8" onClick={() => alert("Thanks for buying!")}>
+            <button
+              className="bg-red-500 h-16 w-36 text-white rounded-lg text-lg font-semibold filter hover:brightness-90 transition ml-auto mt-8"
+              onClick={() => alert("Thanks for buying!")}
+            >
               Finish
             </button>
           </div>

@@ -29,6 +29,7 @@ export const menu = [
     id: 4,
     icon: "🌭",
     name: "Hotdog",
+    ingredients: "Bread, Sausage",
     price: 3.9,
   }
 ];
